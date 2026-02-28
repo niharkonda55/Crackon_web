@@ -39,20 +39,20 @@ export function Footer() {
               Discord
             </a>
             <a
-              href={config.twitterUrl}
+              href="https://www.linkedin.com/company/crackon-community"
               target="_blank"
               rel="noreferrer"
               className="hover:text-white transition"
             >
-              Twitter
+              LinkedIn
             </a>
             <a
-              href="https://github.com"
+              href="https://www.instagram.com/crackonctf/"
               target="_blank"
               rel="noreferrer"
               className="hover:text-white transition"
             >
-              GitHub
+              Instagram
             </a>
           </div>
         </div>
@@ -83,8 +83,8 @@ export function Footer() {
           </h3>
 
           <div className="space-y-2 text-sm text-white/70">
-            <p>Start: {new Date(config.startTime).toUTCString()}</p>
-            <p>End: {new Date(config.endTime).toUTCString()}</p>
+            <p>Start: {new Date(config.startTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</p>
+            <p>End: {new Date(config.endTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</p>
             <p>Flag format: {config.flagFormat}</p>
             <p className="text-xs text-white/40 pt-2">
               Powered by your CTF backend.

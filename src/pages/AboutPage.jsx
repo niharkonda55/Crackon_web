@@ -50,7 +50,7 @@ export function AboutPage() {
 
         <div className="space-y-4">
           {[
-            ["01", "72 HOURS", "DURATION"],
+            ["01", "24 HOURS", "DURATION"],
             ["02", "50+ CHALLENGES", "ACROSS 7 CATEGORIES"],
             ["03", "OPEN TO ALL", "INDIVIDUALS & TEAMS"],
             ["04", "ONLINE", "COMPETE FROM ANYWHERE"]
@@ -83,8 +83,8 @@ export function AboutPage() {
           <div className="h-px w-full bg-white/10" />
           {[
             ["REGISTRATION OPENS", "Feb 1"],
-            ["CTF BEGINS", "Mar 1 · 10:00 UTC"],
-            ["CTF ENDS", "Mar 3 · 10:00 UTC"],
+            ["CTF BEGINS", "Mar 15 · 11:00 AM IST"],
+            ["CTF ENDS", "Mar 16 · 11:00 AM IST"],
             ["WINNERS ANNOUNCED", "Mar 4"]
           ].map((node, idx) => (
             <div

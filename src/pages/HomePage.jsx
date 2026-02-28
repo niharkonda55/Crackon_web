@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import hackcultureLogo from "../assets/hackculture.png";
+import apiSecLogo from "../assets/apisec-logo.png";
+import k7Logo from "../assets/K7.jpeg";
+import ctf7Logo from "../assets/ctf7.jpg";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
 import { challenges } from "../data/challenges.js";
 import { config } from "../data/config.js";
 import { organizers } from "../data/organizers.js";
-import { sponsors } from "../data/sponsors.js";
 import { RUNE_PATHS, RuneGlyph } from "../components/DarkCTFIntro.jsx";
 
 export function HomePage() {
@@ -129,10 +131,10 @@ export function HomePage() {
           <CountdownTimer target={config.startTime} />
           <div className="text-[0.65rem] text-white/80 font-mono uppercase tracking-tight flex items-center justify-center gap-x-2">
             <span>CTF STARTS:</span>
-            <span className="text-white">{new Date(config.startTime).toUTCString()}</span>
+            <span className="text-white">{new Date(config.startTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</span>
             <span className="mx-2 text-white/20">/</span>
             <span>ENDS:</span>
-            <span className="text-white">{new Date(config.endTime).toUTCString()}</span>
+            <span className="text-white">{new Date(config.endTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</span>
           </div>
         </div>
       </motion.section>
@@ -288,8 +290,33 @@ export function HomePage() {
           <p className="text-[0.7rem] text-white/70 mb-6">
             Those who hold the thread.
           </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
-            {sponsors.map((s) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-6">
+            {[
+              {
+                id: "apisec",
+                name: "API SEC UNIVERSITY",
+                tier: "CERTIFICATE SPONSOR",
+                image: apiSecLogo
+              },
+              {
+                id: "k7",
+                name: "K7 SECURITY",
+                tier: "CYBERSECURITY SPONSOR",
+                image: k7Logo
+              },
+              {
+                id: "ctf7",
+                name: "CTF7",
+                tier: "PLATFORM SPONSOR",
+                image: ctf7Logo
+              },
+              {
+                id: "hackculture",
+                name: "HACKCULTURE",
+                tier: "SUPPORT SPONSOR",
+                image: hackcultureLogo
+              }
+            ].map((s) => (
               <motion.article
                 key={s.id}
                 className="border border-border bg-surface px-4 py-6 no-radius flex flex-col items-center"
@@ -300,13 +327,17 @@ export function HomePage() {
                 }}
               >
                 <div className="w-32 h-16 mb-3 bg-[#080808] flex items-center justify-center overflow-hidden no-radius">
-                  <span className="text-xs text-white/70">{s.name}</span>
+                  <img
+                    src={s.image}
+                    alt={s.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <p className="font-display text-[0.6rem] tracking-[0.12em] uppercase text-white mb-1">
-                  {s.tier.toUpperCase()} SPONSOR
+                  {s.tier}
                 </p>
                 <p className="text-[0.7rem] text-white/70 font-mono">
-                  {s.tagline}
+                  {s.name}
                 </p>
               </motion.article>
             ))}
@@ -343,6 +374,26 @@ export function HomePage() {
                 <p>{rule}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mx-auto max-w-3xl mt-8">
+            <h3 className="font-display block text-[0.7rem] tracking-[0.1em] text-white/70 uppercase mb-2 text-center">
+              EVENT DETAILS
+            </h3>
+            <div className="border-l border-accent pl-5 space-y-4">
+              {[
+                ["FORMAT", "Team-based Capture The Flag (1–3 members per team)"],
+                ["DATE", "15th March 2026"],
+                ["LOCATION", "Online"]
+              ].map(([label, value]) => (
+                <div key={label} className="text-xs text-text">
+                  <span className="font-display block text-[0.7rem] tracking-[0.1em] text-white/70 uppercase mb-1">
+                    {label}
+                  </span>
+                  <p>{value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>

@@ -45,10 +45,10 @@ export function EventDetailsPage() {
               SCHEDULE
             </h3>
             <ul className="space-y-2 text-xs text-text font-mono">
-              <li>Registration Closes: {new Date(config.registrationCloses).toUTCString()}</li>
-              <li>Competition Start: {new Date(config.startTime).toUTCString()}</li>
-              <li>Competition End: {new Date(config.endTime).toUTCString()}</li>
-              <li>Results: {new Date(config.winnersAnnounced).toUTCString()}</li>
+              <li>Registration Closes: {new Date(config.registrationCloses).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</li>
+              <li>Competition Start: {new Date(config.startTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</li>
+              <li>Competition End: {new Date(config.endTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</li>
+              <li>Results: {new Date(config.winnersAnnounced).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true })} IST</li>
             </ul>
           </motion.div>
 
