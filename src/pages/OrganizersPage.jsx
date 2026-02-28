@@ -5,8 +5,8 @@ export function OrganizersPage() {
   return (
     <div className="pt-24 px-4 pb-16 min-h-screen bg-bg text-text">
       <header className="mx-auto max-w-4xl text-center mb-8">
-        <h1 className="font-display text-[1.4rem] sm:text-2xl tracking-[0.6em] uppercase text-white">
-          T H E  O R G A N I Z E R S
+        <h1 className="font-display text-[1.4rem] sm:text-2xl text-white uppercase flex items-center justify-center gap-x-3">
+          <span>THE</span><span>ORGANIZERS</span>
         </h1>
         <p className="mt-2 text-xs text-muted">THE ONES WHO TIED THE KNOT</p>
       </header>
@@ -43,10 +43,10 @@ export function OrganizersPage() {
                   </>
                 )}
               </div>
-              <h2 className="font-display text-xs tracking-[0.25em] uppercase text-white">
+              <h2 className="font-display text-[0.65rem] tracking-[0.1em] uppercase text-white">
                 {org.name}
               </h2>
-              <p className="font-mono text-[0.65rem] text-accent tracking-[0.3em] uppercase mt-1">
+              <p className="font-mono text-[0.6rem] text-accent tracking-[0.12em] uppercase mt-1">
                 {org.role}
               </p>
               <div className="mt-2 flex gap-3 text-[0.75rem] text-muted">
@@ -74,17 +74,21 @@ export function OrganizersPage() {
         </div>
 
         <section className="text-center mt-10">
-          <p className="font-display text-xs tracking-[0.4em] text-white uppercase mb-2">
-            W A N T  T O  C O N T R I B U T E ?
+          <p className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3">
+            <div className="flex items-center justify-center gap-x-3">
+              <span>WANT</span><span>TO</span><span>CONTRIBUTE?</span>
+            </div>
           </p>
           <p className="text-[0.7rem] text-muted mb-4">
             Reach out if you want to author challenges or help organize the next loop.
           </p>
           <a
             href="/contact"
-            className="inline-flex border border-white/60 px-6 py-3 no-radius font-display text-[0.65rem] tracking-[0.4em] uppercase hover:border-white hover:text-white"
+            className="inline-flex border border-white/60 px-8 py-4 no-radius font-display text-[0.6rem] uppercase hover:border-white hover:text-white transition-all group"
           >
-            G E T  I N  T O U C H
+            <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
+              <span>GET</span><span>IN</span><span>TOUCH</span>
+            </div>
           </a>
         </section>
       </main>

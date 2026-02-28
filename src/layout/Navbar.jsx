@@ -54,23 +54,25 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 border-b border-white/10 ${
-          scrolled ? "backdrop-blur-md bg-black/60" : "bg-black/85"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 border-b border-white/10 ${scrolled ? "backdrop-blur-md bg-black/60" : "bg-black/85"
+          }`}
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          
+
           <div className="flex h-16 items-center justify-between gap-4">
-            
+
             {/* Left spacer */}
             <div className="w-12" />
 
             {/* Center Heading */}
             <a
               href="/"
-              className="font-display text-2xl tracking-[0.4em] uppercase text-white leading-none"
+              className="font-display text-2xl uppercase text-white leading-none"
             >
-              DAЯK CTF
+              <div className="flex items-center gap-x-4 tracking-[0.2em]">
+                <span>DAЯK</span>
+                <span className="text-white/70">CTF</span>
+              </div>
             </a>
 
             {/* Logo */}
@@ -84,17 +86,16 @@ export function Navbar() {
           <div className="h-px w-full bg-white/10" />
 
           {/* Desktop links */}
-          <nav className="hidden md:flex items-center justify-center gap-10 py-4">
+          <nav className="hidden md:flex items-center justify-center gap-12 py-4">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick(link.href)}
-                className={`font-display text-xs tracking-[0.35em] uppercase transition-colors duration-300 ${
-                  activeHref === link.href
-                    ? "text-white"
-                    : "text-white/50 hover:text-white"
-                }`}
+                className={`font-display text-[0.7rem] tracking-[0.15em] uppercase transition-colors duration-300 ${activeHref === link.href
+                  ? "text-white"
+                  : "text-white/50 hover:text-white"
+                  }`}
               >
                 {link.label}
               </a>
@@ -111,11 +112,10 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={handleNavClick(link.href)}
-              className={`font-display text-xs tracking-[0.32em] uppercase ${
-                activeHref === link.href
+              className={`font-display text-[0.65rem] tracking-[0.12em] uppercase ${activeHref === link.href
                   ? "text-white"
                   : "text-white/50 hover:text-white"
-              }`}
+                }`}
             >
               {link.label}
             </a>

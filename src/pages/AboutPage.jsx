@@ -5,12 +5,12 @@ export function AboutPage() {
     <div className="pt-24 px-4 pb-16 min-h-screen bg-bg text-text">
       <header className="mx-auto max-w-4xl text-center mb-12">
         <motion.h1
-          className="font-display text-[8vw] sm:text-[5vw] tracking-[0.6em] uppercase text-white"
+          className="font-display text-[8vw] sm:text-[5vw] text-white uppercase flex items-center justify-center gap-x-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          A B O U T
+          <span>A</span><span>B</span><span>O</span><span>U</span><span>T</span>
         </motion.h1>
       </header>
 
@@ -26,8 +26,10 @@ export function AboutPage() {
       {/* Concept + Numbers */}
       <section className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 mb-14">
         <div>
-          <h2 className="font-display text-xs tracking-[0.4em] text-accent uppercase mb-4">
-            W H A T  I S  T H I S
+          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-accent uppercase mb-5">
+            <div className="flex items-center gap-x-3">
+              <span>WHAT</span><span>IS</span><span>THIS</span>
+            </div>
           </h2>
           <p className="font-mono text-xs leading-7 text-text mb-4">
             DARK CTF is a Capture The Flag competition woven into the mythology of
@@ -58,7 +60,7 @@ export function AboutPage() {
                 {num}
               </div>
               <div>
-                <p className="font-display text-xs tracking-[0.35em] uppercase text-white">
+                <p className="font-display text-[0.7rem] tracking-[0.1em] uppercase text-white">
                   {title}
                 </p>
                 <p className="font-mono text-[0.65rem] text-muted mt-1">
@@ -72,8 +74,10 @@ export function AboutPage() {
 
       {/* Timeline */}
       <section className="mx-auto max-w-5xl">
-        <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-6">
-          T H E  C Y C L E
+        <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-8">
+          <div className="flex items-center gap-x-3">
+            <span>THE</span><span>CYCLE</span>
+          </div>
         </h2>
         <div className="relative">
           <div className="h-px w-full bg-white/10" />
@@ -93,11 +97,10 @@ export function AboutPage() {
                 style={{ marginBottom: idx % 2 === 0 ? "0.75rem" : "-0.75rem" }}
               />
               <div
-                className={`text-[0.6rem] text-muted whitespace-nowrap ${
-                  idx % 2 === 0 ? "mb-4" : "mt-4"
-                }`}
+                className={`text-[0.6rem] text-muted whitespace-nowrap ${idx % 2 === 0 ? "mb-4" : "mt-4"
+                  }`}
               >
-                <div className="tracking-[0.3em] uppercase">{node[0]}</div>
+                <div className="tracking-[0.12em] uppercase">{node[0]}</div>
                 <div>{node[1]}</div>
               </div>
             </div>

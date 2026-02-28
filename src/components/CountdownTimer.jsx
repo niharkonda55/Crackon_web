@@ -47,12 +47,12 @@ export function CountdownTimer({ target, onFinish }) {
             key={part.label}
             className="flex flex-col items-center gap-1"
           >
-            <div className="min-w-[4.5rem] border border-border px-3 sm:px-4 py-2 sm:py-3 no-radius flex justify-center">
-              <span className="font-mono text-4xl sm:text-5xl md:text-6xl text-text leading-none">
+            <div className="min-w-[4.5rem] border border-border px-3 sm:px-4 py-2 sm:py-3 no-radius flex justify-center overflow-hidden">
+              <span className="font-mono text-4xl sm:text-5xl md:text-6xl text-white leading-none tracking-normal">
                 {format(part.value)}
               </span>
             </div>
-            <span className="mt-1 text-[0.6rem] tracking-[0.35em] text-muted uppercase">
+            <span className="mt-2 text-[0.6rem] tracking-[0.1em] text-muted uppercase">
               {part.label}
             </span>
           </div>

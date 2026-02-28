@@ -8,8 +8,8 @@ export function SponsorsPage() {
   return (
     <div className="pt-24 px-4 pb-16 min-h-screen bg-bg text-text">
       <header className="mx-auto max-w-4xl text-center mb-8">
-        <h1 className="font-display text-[1.4rem] sm:text-2xl tracking-[0.6em] uppercase text-white">
-          S P O N S O R S
+        <h1 className="font-display text-[1.4rem] sm:text-2xl text-white uppercase flex items-center justify-center gap-x-3">
+          <span>S</span><span>P</span><span>O</span><span>N</span><span>S</span><span>O</span><span>R</span><span>S</span>
         </h1>
         <p className="mt-2 text-xs text-muted">THOSE WHO HOLD THE THREAD</p>
       </header>
@@ -18,8 +18,10 @@ export function SponsorsPage() {
         {/* Title sponsor */}
         {title.length > 0 && (
           <section>
-            <h2 className="font-display text-xs tracking-[0.4em] text-accent uppercase mb-4">
-              T I T L E  S P O N S O R
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-accent uppercase mb-5">
+              <div className="flex items-center gap-x-3">
+                <span>TITLE</span><span>SPONSOR</span>
+              </div>
             </h2>
             <div className="border-y border-accent/40 py-6 flex flex-col items-center gap-4">
               {title.map((s) => (
@@ -43,8 +45,10 @@ export function SponsorsPage() {
         {/* Gold sponsors */}
         {gold.length > 0 && (
           <section>
-            <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-4">
-              G O L D  S P O N S O R S
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-5">
+              <div className="flex items-center gap-x-3">
+                <span>GOLD</span><span>SPONSORS</span>
+              </div>
             </h2>
             <div className="grid gap-6 sm:grid-cols-3">
               {gold.map((s) => (
@@ -60,8 +64,8 @@ export function SponsorsPage() {
         {/* Supporters */}
         {supporter.length > 0 && (
           <section>
-            <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-4">
-              S U P P O R T E R S
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-5">
+              <span>S</span><span>U</span><span>P</span><span>P</span><span>O</span><span>R</span><span>T</span><span>E</span><span>R</span><span>S</span>
             </h2>
             <div className="grid gap-4 sm:grid-cols-5 text-center text-[0.7rem] text-muted">
               {supporter.map((s) => (
@@ -75,8 +79,10 @@ export function SponsorsPage() {
 
         {/* Become sponsor */}
         <section className="mt-10 border-t border-border pt-8">
-          <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-2 text-center">
-            J O I N  T H E  K N O T
+          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 text-center">
+            <div className="flex items-center justify-center gap-x-3">
+              <span>JOIN</span><span>THE</span><span>KNOT</span>
+            </div>
           </h2>
           <p className="text-xs text-muted text-center mb-6">
             Support the next generation of security researchers entangled in the loop.
@@ -104,9 +110,11 @@ export function SponsorsPage() {
           <div className="mt-6 text-center">
             <a
               href="/contact"
-              className="inline-flex border border-white/60 px-6 py-3 no-radius font-display text-[0.65rem] tracking-[0.4em] uppercase hover:border-white hover:text-white"
+              className="inline-flex border border-white/60 px-8 py-4 no-radius font-display text-[0.6rem] uppercase hover:border-white hover:text-white transition-all group"
             >
-              C O N T A C T  U S  T O  S P O N S O R
+              <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
+                <span>CONTACT</span><span>US</span><span>TO</span><span>SPONSOR</span>
+              </div>
             </a>
           </div>
         </section>

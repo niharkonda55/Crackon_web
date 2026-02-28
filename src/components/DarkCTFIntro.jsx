@@ -151,8 +151,8 @@ function InfinityLoader({ size = 55, duration = 2800, onComplete }) {
           fontFamily: "Raleway,sans-serif",
           fontWeight: 100,
           fontSize: 14,
-          letterSpacing: "0.45em",
-          color: "#888",
+          letterSpacing: "0.15em",
+          color: "#c8b89a",
         }}
       >
         {Math.round(progress * 100)} %
@@ -313,8 +313,8 @@ function RuneRing({ onDone }) {
           fontFamily: "Raleway,sans-serif",
           fontWeight: 100,
           fontSize: 11,
-          letterSpacing: "0.4em",
-          color: "#555",
+          letterSpacing: "0.15em",
+          color: "#c8b89a",
           opacity,
         }}
       >
@@ -365,9 +365,9 @@ export default function DarkCTFIntro({ onComplete }) {
         }
         @keyframes dci-riseUp {
           0%   { transform:translate(-50%,-50%) scale(1); 
-                 font-size: clamp(28px,5vw,52px); letter-spacing:0.5em; }
+                 font-size: clamp(28px,5vw,52px); letter-spacing:0.3em; }
           100% { transform:translate(-50%,-500%) scale(1);
-                 font-size: 14px; letter-spacing:0.45em; }
+                 font-size: 14px; letter-spacing:0.15em; }
         }
         @keyframes dci-navLock {
           from { opacity:0; transform:translateX(-50%) translateY(-6px); }
@@ -452,10 +452,9 @@ export default function DarkCTFIntro({ onComplete }) {
               transform: "translate(-50%,-50%)",
               display: "flex",
               alignItems: "baseline",
-              gap: "0.6em",
+              gap: "2rem",
               fontWeight: 100,
               fontSize: "clamp(28px,5vw,52px)",
-              letterSpacing: "0.5em",
               color: "white",
               zIndex: 2,
               animation: "dci-glow 3s ease-in-out infinite",
@@ -467,9 +466,9 @@ export default function DarkCTFIntro({ onComplete }) {
                 key={l + i}
                 style={{
                   display: "inline-block",
-                  animation: `dci-letterIn 0.8s cubic-bezier(0.16,1,0.3,1) ${
-                    i * 0.1
-                  }s both`,
+                  letterSpacing: "0.25em",
+                  animation: `dci-letterIn 0.8s cubic-bezier(0.16,1,0.3,1) ${i * 0.1
+                    }s both`,
                 }}
               >
                 {l}
@@ -478,9 +477,9 @@ export default function DarkCTFIntro({ onComplete }) {
             {/* CTF same scale as DAЯK */}
             <span
               style={{
-                letterSpacing: "0.5em",
+                letterSpacing: "0.25em",
                 color: "rgba(255,255,255,0.8)",
-                marginLeft: "0.6em",
+                marginLeft: "0.5rem",
                 alignSelf: "center",
                 animation:
                   "dci-letterIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both",
@@ -500,7 +499,6 @@ export default function DarkCTFIntro({ onComplete }) {
               left: "50%",
               fontWeight: 100,
               fontSize: "clamp(28px,5vw,52px)",
-              letterSpacing: "0.5em",
               color: "white",
               whiteSpace: "nowrap",
               zIndex: 3,
@@ -508,16 +506,17 @@ export default function DarkCTFIntro({ onComplete }) {
                 "dci-riseUp 1.1s cubic-bezier(0.76,0,0.24,1) forwards",
             }}
           >
-            DAЯK{" "}
-            <span
-              style={{
-                letterSpacing: "0.5em",
-                color: "rgba(255,255,255,0.8)",
-                verticalAlign: "middle",
-              }}
-            >
-              CTF
-            </span>
+            <div className="flex items-center gap-x-8">
+              <span style={{ letterSpacing: "0.25em" }}>DAЯK</span>
+              <span
+                style={{
+                  letterSpacing: "0.25em",
+                  color: "rgba(255,255,255,0.8)",
+                }}
+              >
+                CTF
+              </span>
+            </div>
           </div>
         )}
 
@@ -541,14 +540,16 @@ export default function DarkCTFIntro({ onComplete }) {
                 left: "50%",
                 fontWeight: 100,
                 fontSize: 14,
-                letterSpacing: "0.45em",
                 color: "white",
                 whiteSpace: "nowrap",
                 animation: "dci-navLock 0.5s ease both",
                 zIndex: 4,
               }}
             >
-              DAЯK CTF
+              <div className="flex items-center gap-x-4 tracking-[0.15em]">
+                <span>DAЯK</span>
+                <span className="text-white/70">CTF</span>
+              </div>
             </div>
           </>
         )}
@@ -561,8 +562,8 @@ export default function DarkCTFIntro({ onComplete }) {
             bottom: 20,
             right: 20,
             background: "none",
-            border: "1px solid #1e1e1e",
-            color: "#3a3a3a",
+            border: "1px solid rgba(200,184,154,0.3)",
+            color: "#c8b89a",
             fontFamily: "Raleway,sans-serif",
             fontWeight: 200,
             fontSize: 9,
@@ -574,15 +575,18 @@ export default function DarkCTFIntro({ onComplete }) {
             zIndex: 10,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#555";
-            e.currentTarget.style.color = "#999";
+            e.currentTarget.style.borderColor = "#c8b89a";
+            e.currentTarget.style.color = "#ffffff";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#1e1e1e";
-            e.currentTarget.style.color = "#3a3a3a";
+            e.currentTarget.style.borderColor = "rgba(200,184,154,0.3)";
+            e.currentTarget.style.color = "#c8b89a";
           }}
         >
-          ↺ Replay
+          <div className="flex items-center gap-x-2 tracking-[0.12em]">
+            <span>↺</span>
+            <span>REPLAY</span>
+          </div>
         </button>
       </div>
     </>

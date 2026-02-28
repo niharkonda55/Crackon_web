@@ -7,13 +7,13 @@ export function EventDetailsPage() {
     <div className="pt-20 min-h-screen bg-bg text-text">
       {/* Live countdown hero */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center px-4 border-b border-border">
-        <motion.p
-          className="font-display text-[0.7rem] tracking-[0.4em] text-muted uppercase mb-6"
+        <motion.div
+          className="font-display text-[0.7rem] tracking-[0.1em] text-muted uppercase mb-8 flex items-center justify-center gap-x-3"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          T H E  L O O P  C L O S E S  I N
-        </motion.p>
+          <span>THE</span><span>LOOP</span><span>CLOSES</span><span>IN</span>
+        </motion.div>
         <CountdownTimer target={config.endTime} />
       </section>
 
@@ -25,8 +25,8 @@ export function EventDetailsPage() {
             className="border border-border bg-surface px-6 py-8 no-radius"
             whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           >
-            <h3 className="font-display text-xs tracking-[0.35em] text-white uppercase mb-3">
-              F O R M A T
+            <h3 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-4 tracking-[0.1em]">
+              FORMAT
             </h3>
             <ul className="space-y-2 text-xs text-text font-mono">
               <li>Competition Type: Online Jeopardy CTF</li>
@@ -41,8 +41,8 @@ export function EventDetailsPage() {
             className="border border-border bg-surface px-6 py-8 no-radius"
             whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           >
-            <h3 className="font-display text-xs tracking-[0.35em] text-white uppercase mb-3">
-              S C H E D U L E
+            <h3 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-4 tracking-[0.1em]">
+              SCHEDULE
             </h3>
             <ul className="space-y-2 text-xs text-text font-mono">
               <li>Registration Closes: {new Date(config.registrationCloses).toUTCString()}</li>
@@ -57,8 +57,8 @@ export function EventDetailsPage() {
             className="border border-border bg-surface px-6 py-8 no-radius"
             whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           >
-            <h3 className="font-display text-xs tracking-[0.35em] text-white uppercase mb-3">
-              P R I Z E S
+            <h3 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-4 tracking-[0.1em]">
+              PRIZES
             </h3>
             <ul className="space-y-2 text-xs text-text font-mono border-l border-accent pl-3">
               <li>1st Place: Trophy + swag</li>

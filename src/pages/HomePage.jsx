@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import hackcultureLogo from "../assets/hackculture.png";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
 import { CategoryBar } from "../components/CategoryBar.jsx";
@@ -37,38 +38,59 @@ export function HomePage() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="relative text-center space-y-4">
-          <motion.p
-            className="font-display text-xs tracking-[0.5em] text-muted uppercase"
+          <motion.div
+            className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase flex items-center justify-center gap-x-3"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            T H E  C Y C L E  B E G I N S
-          </motion.p>
+            <span>THE</span><span>CYCLE</span><span>BEGINS</span>
+          </motion.div>
           <motion.h1
-            className="font-display text-[10vw] sm:text-[5vw] tracking-[0.55em] text-white uppercase"
+            className="font-display text-[10vw] sm:text-[5vw] text-white uppercase flex items-center justify-center gap-x-[0.6em]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            T H E  K N O T
+            <span className="tracking-[0.2em]">THE</span>
+            <span className="tracking-[0.2em]">KNOT</span>
           </motion.h1>
           <motion.h2
-            className="font-display text-[8vw] sm:text-[4vw] tracking-[0.55em] text-white/70 uppercase"
+            className="font-display text-[8vw] sm:text-[4vw] text-white/70 uppercase flex items-center justify-center gap-x-[0.6em]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            I S  T I E D
+            <span className="tracking-[0.2em]">IS</span>
+            <span className="tracking-[0.2em]">TIED</span>
           </motion.h2>
-          <motion.p
-            className="font-display text-xs sm:text-sm tracking-[0.4em] text-accent uppercase mt-4"
+
+          {/* Powered by Branding */}
+          <motion.div
+            className="flex flex-col items-center gap-y-2 mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <span className="font-display text-[0.55rem] tracking-[0.2em] text-accent uppercase opacity-60">
+              POWERED BY
+            </span>
+            <div className="h-6 sm:h-8 opacity-80 hover:opacity-100 transition-opacity">
+              <img 
+                src={hackcultureLogo} 
+                alt="HackCulture" 
+                className="h-full w-auto object-contain brightness-0 invert" 
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            className="font-display text-[0.7rem] sm:text-xs tracking-[0.12em] text-accent uppercase mt-6 flex items-center justify-center gap-x-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
           >
-            A R E  Y O U  R E A D Y ?
-          </motion.p>
+            <span>ARE</span><span>YOU</span><span>READY?</span>
+          </motion.div>
 
           <motion.div
             className="mt-8"
@@ -78,16 +100,18 @@ export function HomePage() {
           >
             <a
               href="#domains"
-              className="inline-flex items-center border border-white/60 px-6 py-3 no-radius font-display text-[0.65rem] tracking-[0.4em] uppercase hover:border-white hover:text-white transition-colors"
+              className="inline-flex items-center border border-white/60 px-8 py-4 no-radius font-display text-[0.65rem] uppercase hover:border-white hover:text-white transition-colors group"
             >
-              E N T E R  T H E  L O O P
+              <div className="flex items-center gap-x-3 tracking-[0.12em]">
+                <span>ENTER</span><span>THE</span><span>LOOP</span>
+              </div>
             </a>
           </motion.div>
         </div>
 
-        <div className="mt-16 h-px w-40 bg-white/20" />
-        <p className="mt-3 text-[0.6rem] tracking-[0.35em] text-muted uppercase">
-          S C R O L L
+        <div className="mt-16 h-px w-32 bg-white/10" />
+        <p className="mt-4 text-[0.6rem] tracking-[0.15em] text-muted/60 uppercase">
+          SCROLL
         </p>
       </motion.section>
 
@@ -100,15 +124,18 @@ export function HomePage() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.35 }}
       >
-        <div className="mx-auto max-w-4xl text-center space-y-6">
-          <p className="font-display text-[0.7rem] tracking-[0.4em] text-muted uppercase">
-            T I M E  R E M A I N I N G
-          </p>
+        <div className="mx-auto max-w-4xl text-center space-y-8">
+          <div className="font-display text-[0.7rem] tracking-[0.12em] text-muted uppercase flex items-center justify-center gap-x-3">
+            <span>TIME</span><span>REMAINING</span>
+          </div>
           <CountdownTimer target={config.startTime} />
-          <p className="text-[0.7rem] text-muted">
-            CTF starts: {new Date(config.startTime).toUTCString()} / ends:{" "}
-            {new Date(config.endTime).toUTCString()}
-          </p>
+          <div className="text-[0.65rem] text-muted/80 font-mono uppercase tracking-tight flex items-center justify-center gap-x-2">
+            <span>CTF STARTS:</span>
+            <span className="text-white">{new Date(config.startTime).toUTCString()}</span>
+            <span className="mx-2 text-white/20">/</span>
+            <span>ENDS:</span>
+            <span className="text-white">{new Date(config.endTime).toUTCString()}</span>
+          </div>
         </div>
       </motion.section>
 
@@ -128,11 +155,13 @@ export function HomePage() {
               { label: "CHALLENGES", value: challenges.length },
               { label: "PRIZE POOL", value: "$ XXXX" }
             ].map((stat) => (
-              <div key={stat.label} className="space-y-1">
-                <p className="font-mono text-2xl text-white">{stat.value}</p>
-                <p className="font-display text-[0.6rem] tracking-[0.35em] text-muted uppercase">
-                  {stat.label}
-                </p>
+              <div key={stat.label} className="space-y-2">
+                <p className="font-mono text-2xl text-white tracking-normal">{stat.value}</p>
+                <div className="font-display text-[0.6rem] tracking-[0.08em] text-muted uppercase flex flex-wrap items-center justify-center gap-x-2">
+                  {stat.label.split(" ").map((word, i) => (
+                    <span key={i}>{word}</span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -154,8 +183,10 @@ export function HomePage() {
       >
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2">
           <div>
-            <h2 className="font-display text-xs tracking-[0.4em] text-accent uppercase mb-4">
-              W H A T  I S  T H I S
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-accent uppercase mb-5">
+              <div className="flex items-center gap-x-3">
+                <span>WHAT</span><span>IS</span><span>THIS</span>
+              </div>
             </h2>
             <p className="font-mono text-xs leading-7 text-text mb-4">
               DARK CTF is a Capture The Flag competition woven into the
@@ -188,7 +219,7 @@ export function HomePage() {
                   {num}
                 </div>
                 <div>
-                  <p className="font-display text-xs tracking-[0.35em] uppercase text-white">
+                  <p className="font-display text-[0.7rem] tracking-[0.1em] uppercase text-white">
                     {title}
                   </p>
                   <p className="font-mono text-[0.65rem] text-muted mt-1">
@@ -212,8 +243,8 @@ export function HomePage() {
       >
         <div className="mx-auto max-w-6xl">
           <header className="mb-8 text-center">
-            <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-2">
-              D O M A I N S
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
+              <span>D</span><span>O</span><span>M</span><span>A</span><span>I</span><span>N</span><span>S</span>
             </h2>
             <p className="text-[0.7rem] text-muted">
               Threads you can pull inside the loop.
@@ -233,7 +264,7 @@ export function HomePage() {
                 className="border border-border bg-surface px-4 py-4 no-radius"
                 whileHover={{ y: -3, borderColor: "rgba(255,255,255,0.2)" }}
               >
-                <p className="font-display text-xs tracking-[0.35em] text-accent uppercase mb-2">
+                <p className="font-display text-[0.7rem] tracking-[0.12em] text-accent uppercase mb-2">
                   {name}
                 </p>
                 <p className="font-mono text-[0.7rem] text-muted">{desc}</p>
@@ -253,8 +284,8 @@ export function HomePage() {
         viewport={{ once: false, amount: 0.25 }}
       >
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-2">
-            S P O N S O R S
+          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
+            <span>S</span><span>P</span><span>O</span><span>N</span><span>S</span><span>O</span><span>R</span><span>S</span>
           </h2>
           <p className="text-[0.7rem] text-muted mb-6">
             Those who hold the thread.
@@ -273,7 +304,7 @@ export function HomePage() {
                 <div className="w-32 h-16 mb-3 bg-[#080808] flex items-center justify-center overflow-hidden no-radius">
                   <span className="text-xs text-white/70">{s.name}</span>
                 </div>
-                <p className="font-display text-[0.65rem] tracking-[0.3em] uppercase text-white mb-1">
+                <p className="font-display text-[0.6rem] tracking-[0.12em] uppercase text-white mb-1">
                   {s.tier.toUpperCase()} SPONSOR
                 </p>
                 <p className="text-[0.7rem] text-muted font-mono">
@@ -296,8 +327,8 @@ export function HomePage() {
       >
         <div className="mx-auto max-w-6xl">
           <header className="mb-6 text-center">
-            <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-2">
-              T H E  O R G A N I Z E R S
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
+              <span>THE</span><span>ORGANIZERS</span>
             </h2>
             <p className="text-[0.7rem] text-muted">
               The ones who tied the knot.
@@ -325,10 +356,10 @@ export function HomePage() {
                       .join("")}
                   </span>
                 </div>
-                <h3 className="font-display text-xs tracking-[0.25em] uppercase text-white">
+                <h3 className="font-display text-[0.65rem] tracking-[0.1em] uppercase text-white">
                   {org.name}
                 </h3>
-                <p className="font-mono text-[0.65rem] text-accent tracking-[0.3em] uppercase mt-1">
+                <p className="font-mono text-[0.6rem] text-accent tracking-[0.12em] uppercase mt-1">
                   {org.role}
                 </p>
               </motion.article>
@@ -347,8 +378,10 @@ export function HomePage() {
         viewport={{ once: false, amount: 0.25 }}
       >
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-4 text-center">
-            R U L E S  O F  T H E  K N O T
+          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-6 text-center">
+            <div className="flex items-center justify-center gap-x-3">
+              <span>RULES</span><span>OF</span><span>THE</span><span>KNOT</span>
+            </div>
           </h2>
           <div className="mx-auto max-w-3xl border-l border-accent pl-5 space-y-4">
             {[
@@ -358,8 +391,8 @@ export function HomePage() {
               "ABUSE OF INFRASTRUCTURE OUTSIDE THE LOOP is not allowed."
             ].map((rule, idx) => (
               <div key={idx} className="text-xs text-text">
-                <span className="font-display block text-[0.7rem] tracking-[0.3em] text-muted uppercase mb-1">
-                  R U L E  {String(idx + 1).padStart(2, "0")}
+                <span className="font-display block text-[0.7rem] tracking-[0.1em] text-muted uppercase mb-1">
+                  RULE {String(idx + 1).padStart(2, "0")}
                 </span>
                 <p>{rule}</p>
               </div>
@@ -379,13 +412,13 @@ export function HomePage() {
       >
         <div className="mx-auto max-w-5xl grid gap-10 md:grid-cols-[3fr,2fr]">
           <div>
-            <h2 className="font-display text-xs tracking-[0.4em] text-white uppercase mb-4">
-              C O N T A C T
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-5">
+              CONTACT
             </h2>
-            <form className="space-y-4">
+            <form className="space-y-6">
               <div>
-                <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                  N A M E
+                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                  NAME
                 </label>
                 <input
                   type="text"
@@ -394,8 +427,8 @@ export function HomePage() {
                 />
               </div>
               <div>
-                <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                  E M A I L
+                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                  EMAIL
                 </label>
                 <input
                   type="email"
@@ -404,8 +437,8 @@ export function HomePage() {
                 />
               </div>
               <div>
-                <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                  M E S S A G E
+                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                  MESSAGE
                 </label>
                 <textarea
                   rows={4}
@@ -415,9 +448,11 @@ export function HomePage() {
               </div>
               <button
                 type="submit"
-                className="w-full border border-white/60 px-4 py-3 no-radius font-display text-[0.6rem] tracking-[0.4em] uppercase text-white/80 hover:border-white hover:text-white"
+                className="w-full border border-white/60 px-4 py-4 no-radius font-display text-[0.6rem] uppercase text-white/80 hover:border-white hover:text-white transition-all group"
               >
-                S E N D  T H R O U G H  T H E  L O O P
+                <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
+                  <span>SEND</span><span>THROUGH</span><span>THE</span><span>LOOP</span>
+                </div>
               </button>
             </form>
           </div>

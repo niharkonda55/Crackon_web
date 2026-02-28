@@ -16,8 +16,20 @@ export function ScoreChart({ teams }) {
 
   if (!points.length) {
     return (
-      <div className="border border-border px-4 py-6 text-xs text-muted no-radius">
-        THE KNOT IS EMPTY — NO THREADS TO PULL
+      <div className="border border-border px-4 py-6 text-[0.7rem] text-muted no-radius">
+        <div className="uppercase tracking-[0.06em] flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span>THE</span>
+          <span>KNOT</span>
+          <span>IS</span>
+          <span>EMPTY</span>
+
+          <span className="mx-1 tracking-normal opacity-70">—</span>
+
+          <span>NO</span>
+          <span>THREADS</span>
+          <span>TO</span>
+          <span>PULL</span>
+        </div>
       </div>
     );
   }
@@ -50,8 +62,11 @@ export function ScoreChart({ teams }) {
 
   return (
     <div className="border border-border bg-surface px-4 py-4 no-radius">
-      <h3 className="font-display text-xs tracking-[0.35em] text-muted uppercase mb-3">
-        S C O R E  T I M E L I N E
+      <h3 className="font-display text-[0.65rem] tracking-[0.08em] text-muted uppercase mb-4">
+        <div className="flex items-center gap-x-3">
+          <span>SCORE</span>
+          <span>TIMELINE</span>
+        </div>
       </h3>
       <svg
         viewBox={`0 0 ${width} ${height}`}

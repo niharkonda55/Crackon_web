@@ -50,11 +50,11 @@ export function ContactPage() {
 
   return (
     <div className="pt-24 px-4 pb-16 min-h-screen bg-bg text-text">
-      <header className="mx-auto max-w-4xl text-center mb-8">
-        <h1 className="font-display text-[1.4rem] sm:text-2xl tracking-[0.6em] uppercase text-white">
-          C O N T A C T
+      <header className="mx-auto max-w-4xl text-center mb-10">
+        <h1 className="font-display text-[1.4rem] sm:text-2xl text-white uppercase flex items-center justify-center gap-x-3">
+          <span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span>
         </h1>
-        <p className="mt-2 text-xs text-muted">SEND A MESSAGE THROUGH THE LOOP</p>
+        <p className="mt-3 text-xs tracking-tight text-muted uppercase">SEND A MESSAGE THROUGH THE LOOP</p>
       </header>
 
       <main className="mx-auto max-w-5xl grid gap-10 md:grid-cols-[3fr,2fr]">
@@ -62,8 +62,8 @@ export function ContactPage() {
         <section>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                N A M E
+              <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                NAME
               </label>
               <input
                 type="text"
@@ -73,8 +73,8 @@ export function ContactPage() {
               />
             </div>
             <div>
-              <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                E M A I L
+              <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                EMAIL
               </label>
               <input
                 type="email"
@@ -84,8 +84,8 @@ export function ContactPage() {
               />
             </div>
             <div>
-              <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                S U B J E C T
+              <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                SUBJECT
               </label>
               <div className="relative">
                 <select
@@ -103,8 +103,8 @@ export function ContactPage() {
               </div>
             </div>
             <div>
-              <label className="block text-[0.65rem] tracking-[0.3em] uppercase text-muted mb-1">
-                M E S S A G E
+              <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
+                MESSAGE
               </label>
               <textarea
                 rows={6}
@@ -120,17 +120,19 @@ export function ContactPage() {
             <motion.button
               type="submit"
               disabled={loading}
-              className="w-full border border-white/60 px-4 py-3 no-radius font-display text-[0.6rem] tracking-[0.4em] uppercase text-white/80 hover:border-white hover:text-white disabled:opacity-60"
+              className="w-full border border-white/60 px-4 py-4 no-radius font-display text-[0.6rem] uppercase text-white/80 hover:border-white hover:text-white disabled:opacity-60 transition-all group"
             >
-              {loading ? (
-                <div className="flex justify-center">
+              <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
+                {loading ? (
                   <InfinityLoader size={24} duration={1200} />
-                </div>
-              ) : state === "success" ? (
-                "M E S S A G E  S E N T"
-              ) : (
-                "S E N D  T H R O U G H  T H E  L O O P"
-              )}
+                ) : state === "success" ? (
+                  <span>MESSAGE SENT</span>
+                ) : (
+                  <>
+                    <span>SEND</span><span>THROUGH</span><span>THE</span><span>LOOP</span>
+                  </>
+                )}
+              </div>
             </motion.button>
             <p className="text-[0.7rem] text-muted">
               We usually respond within 24–48 hours.
@@ -148,8 +150,8 @@ export function ContactPage() {
           </div>
 
           <div className="border-t border-border pt-4">
-            <h2 className="font-display text-[0.65rem] tracking-[0.35em] text-muted uppercase mb-3">
-              F R E Q U E N T  Q U E S T I O N S
+            <h2 className="font-display text-[0.6rem] tracking-[0.08em] text-muted uppercase mb-4">
+              FREQUENT QUESTIONS
             </h2>
             <div className="space-y-2">
               {faqs.map((item, idx) => {
@@ -192,8 +194,8 @@ export function ContactPage() {
 function InfoBlock({ label, value, href }) {
   return (
     <div className="border-l border-accent pl-3">
-      <p className="font-display text-[0.6rem] tracking-[0.3em] text-muted uppercase">
-        {label}
+      <p className="font-display text-[0.6rem] tracking-[0.12em] text-muted uppercase mb-1">
+        {label.replace(/\s+/g, "")}
       </p>
       {href ? (
         <a

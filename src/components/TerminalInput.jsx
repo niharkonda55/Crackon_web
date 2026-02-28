@@ -30,8 +30,8 @@ export function TerminalInput({ onSubmit, placeholder = "ENTER FLAG" }) {
       animate={
         state === "error"
           ? {
-              x: [0, -8, 8, -4, 4, 0]
-            }
+            x: [0, -8, 8, -4, 4, 0]
+          }
           : { x: 0 }
       }
       transition={{ duration: 0.4 }}
@@ -47,7 +47,7 @@ export function TerminalInput({ onSubmit, placeholder = "ENTER FLAG" }) {
       <button
         type="submit"
         disabled={loading}
-        className="border border-white/40 text-[0.6rem] tracking-[0.32em] uppercase px-3 py-1 no-radius font-display text-text hover:border-white transition-colors disabled:opacity-60"
+        className="border border-white/40 text-[0.6rem] tracking-[0.12em] uppercase px-4 py-1.5 no-radius font-display text-white hover:border-white transition-colors disabled:opacity-60"
       >
         {loading ? <InfinityLoader size={24} duration={1200} /> : "SUBMIT"}
       </button>

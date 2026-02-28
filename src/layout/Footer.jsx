@@ -6,20 +6,23 @@ export function Footer() {
   return (
     <footer className="mt-16 border-t border-border bg-black">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-3">
-        
+
         {/* Left */}
         <div className="space-y-4">
           <a href="#hero">
-          <div className="flex items-center gap-3">
-            <img
-              src="/triangle.png"
-              alt="Triquetra"
-              className="w-12 h-12 object-contain rounded-full p-1 bg-white/10"
-            />
-            <span className="font-display text-base tracking-[0.35em] uppercase leading-none">
-              DAЯK <span className="text-white/40 pl-2">CTF</span>
-            </span>
-          </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/triangle.png"
+                alt="Triquetra"
+                className="w-12 h-12 object-contain rounded-full p-1 bg-white/10"
+              />
+              <span className="font-display text-base uppercase leading-none">
+                <div className="flex items-center gap-x-3 tracking-[0.2em]">
+                  <span>DAЯK</span>
+                  <span className="text-white/40">CTF</span>
+                </div>
+              </span>
+            </div>
           </a>
 
           <p className="text-sm text-muted">
@@ -56,8 +59,10 @@ export function Footer() {
 
         {/* Center */}
         <div>
-          <h3 className="font-display text-xs tracking-[0.35em] text-muted uppercase mb-4">
-            N A V I G A T E
+          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase mb-5">
+            <div className="flex items-center gap-x-2">
+              <span>N</span><span>A</span><span>V</span><span>I</span><span>G</span><span>A</span><span>T</span><span>E</span>
+            </div>
           </h3>
 
           <nav className="flex flex-col gap-3 text-sm text-muted">
@@ -71,8 +76,11 @@ export function Footer() {
 
         {/* Right */}
         <div>
-          <h3 className="font-display text-xs tracking-[0.35em] text-muted uppercase mb-4">
-            T H E K N O T
+          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase mb-5">
+            <div className="flex items-center gap-x-3">
+              <span>THE</span>
+              <span>KNOT</span>
+            </div>
           </h3>
 
           <div className="space-y-2 text-sm text-muted">
@@ -86,9 +94,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border px-4 sm:px-6 py-4 text-xs text-muted flex items-center justify-between">
-        <span>© 2026 DARK CTF. ALL RIGHTS RESERVED.</span>
-        <span>BUILT IN THE LOOP</span>
+      <div className="border-t border-border px-4 sm:px-6 py-4 text-[0.6rem] text-muted flex items-center justify-between">
+        <span className="tracking-[0.05em]">© 2026 DARK CTF. ALL RIGHTS RESERVED.</span>
+        <span className="tracking-[0.1em]">BUILT IN THE LOOP</span>
       </div>
     </footer>
   );

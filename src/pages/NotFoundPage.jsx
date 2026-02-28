@@ -6,17 +6,24 @@ export function NotFoundPage() {
       <div className="mb-4">
         <RuneGlyph pathD={RUNE_PATHS[5]} size={40} opacity={0.8} />
       </div>
-      <h1 className="font-display text-sm sm:text-base tracking-[0.4em] uppercase text-white">
-        T H I S  T I M E L I N E  D O E S  N O T  E X I S T
+      <h1 className="font-display text-sm sm:text-base text-white uppercase flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-2">
+        <div className="flex items-center gap-x-3 tracking-[0.1em]">
+          <span>THIS</span><span>TIMELINE</span>
+        </div>
+        <div className="flex items-center gap-x-3 tracking-[0.1em]">
+          <span>DOES</span><span>NOT</span><span>EXIST</span>
+        </div>
       </h1>
       <p className="text-xs text-muted">
         The path you followed unravels into nothing.
       </p>
       <a
-        href="#hero"
-        className="mt-4 inline-flex border border-white/60 px-6 py-3 no-radius font-display text-[0.65rem] tracking-[0.4em] uppercase hover:border-white hover:text-white"
+        href="/"
+        className="mt-6 inline-flex border border-white/60 px-8 py-4 no-radius font-display text-[0.65rem] uppercase hover:border-white hover:text-white transition-all group"
       >
-        R E T U R N  T O  T H E  L O O P
+        <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
+          <span>RETURN</span><span>TO</span><span>THE</span><span>LOOP</span>
+        </div>
       </a>
     </div>
   );
