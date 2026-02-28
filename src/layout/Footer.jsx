@@ -25,11 +25,11 @@ export function Footer() {
             </div>
           </a>
 
-          <p className="text-sm text-muted">
+          <p className="text-sm text-white/70">
             Every end is a beginning.
           </p>
 
-          <div className="flex items-center gap-4 text-sm text-muted">
+          <div className="flex items-center gap-4 text-sm text-white/70">
             <a
               href={config.discordUrl}
               target="_blank"
@@ -59,13 +59,13 @@ export function Footer() {
 
         {/* Center */}
         <div>
-          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase mb-5">
+          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-white/70 uppercase mb-5">
             <div className="flex items-center gap-x-2">
               <span>N</span><span>A</span><span>V</span><span>I</span><span>G</span><span>A</span><span>T</span><span>E</span>
             </div>
           </h3>
 
-          <nav className="flex flex-col gap-3 text-sm text-muted">
+          <nav className="flex flex-col gap-3 text-sm text-white/70">
             <a href="#about" className="hover:text-white transition">ABOUT</a>
             <a href="#domains" className="hover:text-white transition">DOMAINS</a>
             <a href="#sponsors" className="hover:text-white transition">SPONSORS</a>
@@ -76,14 +76,14 @@ export function Footer() {
 
         {/* Right */}
         <div>
-          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase mb-5">
+          <h3 className="font-display text-[0.65rem] tracking-[0.1em] text-white/70 uppercase mb-5">
             <div className="flex items-center gap-x-3">
               <span>THE</span>
               <span>KNOT</span>
             </div>
           </h3>
 
-          <div className="space-y-2 text-sm text-muted">
+          <div className="space-y-2 text-sm text-white/70">
             <p>Start: {new Date(config.startTime).toUTCString()}</p>
             <p>End: {new Date(config.endTime).toUTCString()}</p>
             <p>Flag format: {config.flagFormat}</p>
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border px-4 sm:px-6 py-4 text-[0.6rem] text-muted flex items-center justify-between">
+      <div className="border-t border-border px-4 sm:px-6 py-4 text-[0.6rem] text-white/70 flex items-center justify-between">
         <span className="tracking-[0.05em]">© 2026 DARK CTF. ALL RIGHTS RESERVED.</span>
         <span className="tracking-[0.1em]">BUILT IN THE LOOP</span>
       </div>

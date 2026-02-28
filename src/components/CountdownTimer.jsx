@@ -52,7 +52,7 @@ export function CountdownTimer({ target, onFinish }) {
                 {format(part.value)}
               </span>
             </div>
-            <span className="mt-2 text-[0.6rem] tracking-[0.1em] text-muted uppercase">
+            <span className="mt-2 text-[0.6rem] tracking-[0.1em] text-white/70 uppercase">
               {part.label}
             </span>
           </div>

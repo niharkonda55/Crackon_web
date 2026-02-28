@@ -39,12 +39,11 @@ export function HomePage() {
       >
         <div className="relative text-center space-y-4">
           <motion.div
-            className="font-display text-[0.65rem] tracking-[0.1em] text-muted uppercase flex items-center justify-center gap-x-3"
+            className="font-display text-[0.65rem] tracking-[0.1em] text-white/70 uppercase flex items-center justify-center gap-x-3"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span>THE</span><span>CYCLE</span><span>BEGINS</span>
           </motion.div>
           <motion.h1
             className="font-display text-[10vw] sm:text-[5vw] text-white uppercase flex items-center justify-center gap-x-[0.6em]"
@@ -75,11 +74,11 @@ export function HomePage() {
             <span className="font-display text-[0.55rem] tracking-[0.2em] text-accent uppercase opacity-60">
               POWERED BY
             </span>
-            <div className="h-6 sm:h-8 opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
               <img 
                 src={hackcultureLogo} 
                 alt="HackCulture" 
-                className="h-full w-auto object-contain brightness-0 invert" 
+                className="h-14 sm:h-20 w-auto" 
               />
             </div>
           </motion.div>
@@ -110,7 +109,7 @@ export function HomePage() {
         </div>
 
         <div className="mt-16 h-px w-32 bg-white/10" />
-        <p className="mt-4 text-[0.6rem] tracking-[0.15em] text-muted/60 uppercase">
+        <p className="mt-4 text-[0.6rem] tracking-[0.15em] text-white/60 uppercase">
           SCROLL
         </p>
       </motion.section>
@@ -125,11 +124,11 @@ export function HomePage() {
         viewport={{ once: false, amount: 0.35 }}
       >
         <div className="mx-auto max-w-4xl text-center space-y-8">
-          <div className="font-display text-[0.7rem] tracking-[0.12em] text-muted uppercase flex items-center justify-center gap-x-3">
+          <div className="font-display text-[0.7rem] tracking-[0.12em] text-white/70 uppercase flex items-center justify-center gap-x-3">
             <span>TIME</span><span>REMAINING</span>
           </div>
           <CountdownTimer target={config.startTime} />
-          <div className="text-[0.65rem] text-muted/80 font-mono uppercase tracking-tight flex items-center justify-center gap-x-2">
+          <div className="text-[0.65rem] text-white/80 font-mono uppercase tracking-tight flex items-center justify-center gap-x-2">
             <span>CTF STARTS:</span>
             <span className="text-white">{new Date(config.startTime).toUTCString()}</span>
             <span className="mx-2 text-white/20">/</span>
@@ -157,7 +156,7 @@ export function HomePage() {
             ].map((stat) => (
               <div key={stat.label} className="space-y-2">
                 <p className="font-mono text-2xl text-white tracking-normal">{stat.value}</p>
-                <div className="font-display text-[0.6rem] tracking-[0.08em] text-muted uppercase flex flex-wrap items-center justify-center gap-x-2">
+                <div className="font-display text-[0.6rem] tracking-[0.08em] text-white/70 uppercase flex flex-wrap items-center justify-center gap-x-2">
                   {stat.label.split(" ").map((word, i) => (
                     <span key={i}>{word}</span>
                   ))}
@@ -188,19 +187,19 @@ export function HomePage() {
                 <span>WHAT</span><span>IS</span><span>THIS</span>
               </div>
             </h2>
-            <p className="font-mono text-xs leading-7 text-text mb-4">
+            <p className="text-sm text-white/70">
               DARK CTF is a Capture The Flag competition woven into the
               mythology of time, paradox, and the eternal knot. Every
               challenge is a thread. Pull the wrong one and the loop
               tightens.
             </p>
-            <p className="font-mono text-xs leading-7 text-text mb-4">
+            <p className="font-mono text-sm leading-7 text-text mb-4">
               Instead of bright dashboards and loud colors, the interface
               pulls you into a quiet, humming anomaly. Flags feel like
               artifacts. Logs, binaries, and packets become echoes from other
               timelines.
             </p>
-            <p className="font-mono text-xs leading-7 text-text">
+            <p className="font-mono text-sm leading-7 text-text">
               You will move between web flaws, cryptographic fractures, binary
               ghosts, and open-source traces — all bound together by a single,
               entangled story: the loop never breaks on its own.
@@ -215,14 +214,14 @@ export function HomePage() {
               ["04", "ONLINE", "COMPETE FROM ANYWHERE"]
             ].map(([num, title, sub]) => (
               <div key={num} className="flex gap-4 border-l border-accent pl-4">
-                <div className="font-mono text-[0.65rem] text-muted mt-[2px]">
+                <div className="font-mono text-sm text-white/70 mt-[2px]">
                   {num}
                 </div>
                 <div>
-                  <p className="font-display text-[0.7rem] tracking-[0.1em] uppercase text-white">
+                  <p className="font-display text-sm tracking-[0.1em] uppercase text-white">
                     {title}
                   </p>
-                  <p className="font-mono text-[0.65rem] text-muted mt-1">
+                  <p className="font-mono text-xs text-white/70 mt-1">
                     {sub}
                   </p>
                 </div>
@@ -246,7 +245,7 @@ export function HomePage() {
             <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
               <span>D</span><span>O</span><span>M</span><span>A</span><span>I</span><span>N</span><span>S</span>
             </h2>
-            <p className="text-[0.7rem] text-muted">
+            <p className="text-sm text-white/70">
               Threads you can pull inside the loop.
             </p>
           </header>
@@ -264,10 +263,10 @@ export function HomePage() {
                 className="border border-border bg-surface px-4 py-4 no-radius"
                 whileHover={{ y: -3, borderColor: "rgba(255,255,255,0.2)" }}
               >
-                <p className="font-display text-[0.7rem] tracking-[0.12em] text-accent uppercase mb-2">
+                <p className="font-display text-sm tracking-[0.12em] text-accent uppercase mb-2">
                   {name}
                 </p>
-                <p className="font-mono text-[0.7rem] text-muted">{desc}</p>
+                <p className="font-mono text-sm text-white/70">{desc}</p>
               </motion.article>
             ))}
           </div>
@@ -287,7 +286,7 @@ export function HomePage() {
           <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
             <span>S</span><span>P</span><span>O</span><span>N</span><span>S</span><span>O</span><span>R</span><span>S</span>
           </h2>
-          <p className="text-[0.7rem] text-muted mb-6">
+          <p className="text-sm text-white/70 mb-6">
             Those who hold the thread.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
@@ -307,60 +306,8 @@ export function HomePage() {
                 <p className="font-display text-[0.6rem] tracking-[0.12em] uppercase text-white mb-1">
                   {s.tier.toUpperCase()} SPONSOR
                 </p>
-                <p className="text-[0.7rem] text-muted font-mono">
+                <p className="text-sm text-white/70 font-mono">
                   {s.tagline}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Organizers summary */}
-      <motion.section
-        id="team"
-        className="py-14 px-4 border-t border-border"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}
-      >
-        <div className="mx-auto max-w-6xl">
-          <header className="mb-6 text-center">
-            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
-              <span>THE</span><span>ORGANIZERS</span>
-            </h2>
-            <p className="text-[0.7rem] text-muted">
-              The ones who tied the knot.
-            </p>
-          </header>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {organizers.map((org) => (
-              <motion.article
-                key={org.id}
-                className="border border-border bg-surface px-4 py-4 no-radius flex flex-col"
-                whileHover={{ y: -3, borderColor: "rgba(255,255,255,0.2)" }}
-              >
-                <div className="w-full aspect-square border border-border no-radius mb-3 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-3 opacity-20">
-                    <RuneGlyph
-                      pathD={RUNE_PATHS[org.rune % RUNE_PATHS.length]}
-                      size={80}
-                      opacity={0.4}
-                    />
-                  </div>
-                  <span className="relative font-display text-sm tracking-[0.3em] text-white">
-                    {org.name
-                      .split(" ")
-                      .map((p) => p[0])
-                      .join("")}
-                  </span>
-                </div>
-                <h3 className="font-display text-[0.65rem] tracking-[0.1em] uppercase text-white">
-                  {org.name}
-                </h3>
-                <p className="font-mono text-[0.6rem] text-accent tracking-[0.12em] uppercase mt-1">
-                  {org.role}
                 </p>
               </motion.article>
             ))}
@@ -390,8 +337,8 @@ export function HomePage() {
               "EVERY THREAD YOU PULL MUST BE YOUR OWN — no copying writeups during the event.",
               "ABUSE OF INFRASTRUCTURE OUTSIDE THE LOOP is not allowed."
             ].map((rule, idx) => (
-              <div key={idx} className="text-xs text-text">
-                <span className="font-display block text-[0.7rem] tracking-[0.1em] text-muted uppercase mb-1">
+              <div key={idx} className="text-sm text-text">
+                <span className="font-display block text-sm tracking-[0.1em] text-white/70 uppercase mb-1\">
                   RULE {String(idx + 1).padStart(2, "0")}
                 </span>
                 <p>{rule}</p>
@@ -410,58 +357,18 @@ export function HomePage() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <div className="mx-auto max-w-5xl grid gap-10 md:grid-cols-[3fr,2fr]">
-          <div>
-            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-5">
-              CONTACT
-            </h2>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
-                  NAME
-                </label>
-                <input
-                  type="text"
-                  placeholder="YOUR NAME"
-                  className="w-full bg-bg border-b border-white/20 px-1 py-2 text-xs font-mono text-text outline-none focus:border-white"
-                />
-              </div>
-              <div>
-                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
-                  EMAIL
-                </label>
-                <input
-                  type="email"
-                  placeholder="YOUR EMAIL"
-                  className="w-full bg-bg border-b border-white/20 px-1 py-2 text-xs font-mono text-text outline-none focus:border-white"
-                />
-              </div>
-              <div>
-                <label className="block text-[0.6rem] tracking-[0.12em] uppercase text-muted mb-2">
-                  MESSAGE
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="YOUR MESSAGE"
-                  className="w-full bg-bg border-b border-white/20 px-1 py-2 text-xs font-mono text-text outline-none resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full border border-white/60 px-4 py-4 no-radius font-display text-[0.6rem] uppercase text-white/80 hover:border-white hover:text-white transition-all group"
-              >
-                <div className="flex items-center justify-center gap-x-3 tracking-[0.12em]">
-                  <span>SEND</span><span>THROUGH</span><span>THE</span><span>LOOP</span>
-                </div>
-              </button>
-            </form>
-          </div>
-          <div className="space-y-3 text-xs text-muted font-mono">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-6 text-center">
+            <div className="flex items-center justify-center">
+              <span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span>
+            </div>
+          </h2>
+          <div className="mx-auto max-w-3xl border-l border-accent pl-5 space-y-4 text-base text-white/70 font-mono">
             <p>
               Email:{" "}
               <a
                 href={`mailto:${config.contactEmail}`}
-                className="text-text hover:text-white"
+                className="text-white hover:text-accent transition"
               >
                 {config.contactEmail}
               </a>
@@ -472,7 +379,7 @@ export function HomePage() {
                 href={config.discordUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-text hover:text-white"
+                className="text-white hover:text-accent transition"
               >
                 {config.discordUrl}
               </a>
