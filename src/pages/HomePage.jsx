@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import hackcultureLogo from "../assets/hackculture.png";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
-import { CategoryBar } from "../components/CategoryBar.jsx";
 import { challenges } from "../data/challenges.js";
 import { config } from "../data/config.js";
 import { organizers } from "../data/organizers.js";
@@ -147,12 +146,11 @@ export function HomePage() {
         viewport={{ once: false, amount: 0.25 }}
       >
         <div className="mx-auto max-w-5xl">
-          <div className="grid gap-8 sm:grid-cols-4 text-center">
+          <div className="grid gap-8 sm:grid-cols-3 text-center">
             {[
-              { label: "TEAMS REGISTERED", value: 128 },
-              { label: "DOMAINS", value: Object.keys(categoryCounts).length },
-              { label: "CHALLENGES", value: challenges.length },
-              { label: "PRIZE POOL", value: "$ XXXX" }
+              { label: "DOMAINS", value: 11 },
+              { label: "CHALLENGES", value: "25 +" },
+              { label: "PRIZE POOL", value: "$ 8 Lakh" }
             ].map((stat) => (
               <div key={stat.label} className="space-y-2">
                 <p className="font-mono text-2xl text-white tracking-normal">{stat.value}</p>
@@ -163,10 +161,6 @@ export function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-10">
-            <CategoryBar categories={categoryCounts} />
           </div>
         </div>
       </motion.section>
@@ -187,19 +181,19 @@ export function HomePage() {
                 <span>WHAT</span><span>IS</span><span>THIS</span>
               </div>
             </h2>
-            <p className="text-sm text-white/70">
+            <p className="font-mono text-xs leading-7 text-text mb-4">
               DARK CTF is a Capture The Flag competition woven into the
               mythology of time, paradox, and the eternal knot. Every
               challenge is a thread. Pull the wrong one and the loop
               tightens.
             </p>
-            <p className="font-mono text-sm leading-7 text-text mb-4">
+            <p className="font-mono text-xs leading-7 text-text mb-4">
               Instead of bright dashboards and loud colors, the interface
               pulls you into a quiet, humming anomaly. Flags feel like
               artifacts. Logs, binaries, and packets become echoes from other
               timelines.
             </p>
-            <p className="font-mono text-sm leading-7 text-text">
+            <p className="font-mono text-xs leading-7 text-text">
               You will move between web flaws, cryptographic fractures, binary
               ghosts, and open-source traces — all bound together by a single,
               entangled story: the loop never breaks on its own.
@@ -214,14 +208,14 @@ export function HomePage() {
               ["04", "ONLINE", "COMPETE FROM ANYWHERE"]
             ].map(([num, title, sub]) => (
               <div key={num} className="flex gap-4 border-l border-accent pl-4">
-                <div className="font-mono text-sm text-white/70 mt-[2px]">
+                <div className="font-mono text-[0.65rem] text-white/70 mt-[2px]">
                   {num}
                 </div>
                 <div>
-                  <p className="font-display text-sm tracking-[0.1em] uppercase text-white">
+                  <p className="font-display text-[0.7rem] tracking-[0.1em] uppercase text-white">
                     {title}
                   </p>
-                  <p className="font-mono text-xs text-white/70 mt-1">
+                  <p className="font-mono text-[0.65rem] text-white/70 mt-1">
                     {sub}
                   </p>
                 </div>
@@ -245,28 +239,33 @@ export function HomePage() {
             <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
               <span>D</span><span>O</span><span>M</span><span>A</span><span>I</span><span>N</span><span>S</span>
             </h2>
-            <p className="text-sm text-white/70">
+            <p className="text-[0.7rem] text-white/70">
               Threads you can pull inside the loop.
             </p>
           </header>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ["WEB", "Unstable web stacks, forgotten panels, misbound sessions."],
-              ["PWN", "Processes from another year waiting to be bent to your will."],
-              ["CRYPTO", "Ciphers stretched across timelines, keys reused by mistake."],
-              ["FORENSICS", "Logs, disks and memory that remember more than they should."],
-              ["REVERSE", "Binaries that hide intent behind layers of compiled history."],
-              ["OSINT", "Traces left in the open, scattered across networks and time."]
+              ["Winden Web", "Web & API Security – unstable web stacks, forgotten panels, misbound sessions and broken endpoints."],
+              ["Sic Mundus Intelligence", "OSINT – traces left in the open, scattered across networks and time."],
+              ["Tannhaus Cipher", "Crypto – ciphers stretched across timelines, keys reused by mistake."],
+              ["Time-Trace Forensics", "Forensics – logs, disks and memory that remember more than they should."],
+              ["God Particle Reverse", "Reverse Engineering – binaries that hide intent behind layers of compiled history."],
+              ["Origin Binary", "Binary Exploitation – processes from another year waiting to be bent to your will."],
+              ["The Unknown Misc", "Misc – unpredictable anomalies off the beaten path."],
+              ["Eternal Knot Chain", "Blockchain – smart contracts and distributed ledgers unraveled."],
+              ["Cave Signal Mobile", "Mobile Security – apps whispering secrets in the wrong ears."],
+              ["Cycle Breaker Boot", "Boot‑2‑Root – kernel exploits and privilege escalation."],
+              ["Future Jonas AI", "AI – machine minds misbehaving in incomprehensible ways."]
             ].map(([name, desc]) => (
               <motion.article
                 key={name}
                 className="border border-border bg-surface px-4 py-4 no-radius"
                 whileHover={{ y: -3, borderColor: "rgba(255,255,255,0.2)" }}
               >
-                <p className="font-display text-sm tracking-[0.12em] text-accent uppercase mb-2">
+                <p className="font-display text-[0.7rem] tracking-[0.12em] text-accent uppercase mb-2">
                   {name}
                 </p>
-                <p className="font-mono text-sm text-white/70">{desc}</p>
+                <p className="font-mono text-[0.7rem] text-white/70">{desc}</p>
               </motion.article>
             ))}
           </div>
@@ -286,7 +285,7 @@ export function HomePage() {
           <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-3 flex items-center justify-center gap-x-3">
             <span>S</span><span>P</span><span>O</span><span>N</span><span>S</span><span>O</span><span>R</span><span>S</span>
           </h2>
-          <p className="text-sm text-white/70 mb-6">
+          <p className="text-[0.7rem] text-white/70 mb-6">
             Those who hold the thread.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
@@ -306,7 +305,7 @@ export function HomePage() {
                 <p className="font-display text-[0.6rem] tracking-[0.12em] uppercase text-white mb-1">
                   {s.tier.toUpperCase()} SPONSOR
                 </p>
-                <p className="text-sm text-white/70 font-mono">
+                <p className="text-[0.7rem] text-white/70 font-mono">
                   {s.tagline}
                 </p>
               </motion.article>
@@ -337,8 +336,8 @@ export function HomePage() {
               "EVERY THREAD YOU PULL MUST BE YOUR OWN — no copying writeups during the event.",
               "ABUSE OF INFRASTRUCTURE OUTSIDE THE LOOP is not allowed."
             ].map((rule, idx) => (
-              <div key={idx} className="text-sm text-text">
-                <span className="font-display block text-sm tracking-[0.1em] text-white/70 uppercase mb-1\">
+              <div key={idx} className="text-xs text-text">
+                <span className="font-display block text-[0.7rem] tracking-[0.1em] text-white/70 uppercase mb-1">
                   RULE {String(idx + 1).padStart(2, "0")}
                 </span>
                 <p>{rule}</p>
@@ -363,7 +362,7 @@ export function HomePage() {
               <span>C</span><span>O</span><span>N</span><span>T</span><span>A</span><span>C</span><span>T</span>
             </div>
           </h2>
-          <div className="mx-auto max-w-3xl border-l border-accent pl-5 space-y-4 text-base text-white/70 font-mono">
+          <div className="mx-auto max-w-3xl border-l border-accent pl-5 space-y-4 text-sm text-white/70 font-mono">
             <p>
               Email:{" "}
               <a
@@ -390,4 +389,3 @@ export function HomePage() {
     </div>
   );
 }
-
