@@ -202,8 +202,8 @@ export function HomePage() {
 
           <div className="space-y-4">
             {[
-              ["01", "72 HOURS", "DURATION"],
-              ["02", "50+ CHALLENGES", "ACROSS 7 CATEGORIES"],
+              ["01", "24 HOURS", "DURATION"],
+              ["02", "25+ CHALLENGES", "ACROSS 11 CATEGORIES"],
               ["03", "OPEN TO ALL", "INDIVIDUALS & TEAMS"],
               ["04", "ONLINE", "COMPETE FROM ANYWHERE"]
             ].map(([num, title, sub]) => (

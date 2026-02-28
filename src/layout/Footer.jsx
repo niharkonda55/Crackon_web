@@ -69,7 +69,6 @@ export function Footer() {
             <a href="#about" className="hover:text-white transition">ABOUT</a>
             <a href="#domains" className="hover:text-white transition">DOMAINS</a>
             <a href="#sponsors" className="hover:text-white transition">SPONSORS</a>
-            <a href="#team" className="hover:text-white transition">TEAM</a>
             <a href="#contact" className="hover:text-white transition">CONTACT</a>
           </nav>
         </div>
