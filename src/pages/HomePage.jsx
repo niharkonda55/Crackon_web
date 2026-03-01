@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import hackcultureLogo from "../assets/hackculture.png";
 import apiSecLogo from "../assets/apisec-logo.png";
-import k7Logo from "../assets/K7.jpeg";
 import ctf7Logo from "../assets/ctf7.jpg";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
@@ -290,19 +289,13 @@ export function HomePage() {
           <p className="text-[0.7rem] text-white/70 mb-6">
             Those who hold the thread.
           </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6">
             {[
               {
                 id: "apisec",
                 name: "API SEC UNIVERSITY",
                 tier: "CERTIFICATE SPONSOR",
                 image: apiSecLogo
-              },
-              {
-                id: "k7",
-                name: "K7 SECURITY",
-                tier: "CYBERSECURITY SPONSOR",
-                image: k7Logo
               },
               {
                 id: "ctf7",

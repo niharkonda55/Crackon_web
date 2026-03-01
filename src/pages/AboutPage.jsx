@@ -26,7 +26,7 @@ export function AboutPage() {
       {/* Concept + Numbers */}
       <section className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 mb-14">
         <div>
-          <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-accent uppercase mb-5">
+          <h2 className="font-display text-sm tracking-[0.08em] text-accent uppercase mb-5">
             <div className="flex items-center gap-x-3">
               <span>WHAT</span><span>IS</span><span>THIS</span>
             </div>
