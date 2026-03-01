@@ -152,7 +152,7 @@ export function HomePage() {
             {[
               { label: "DOMAINS", value: 11 },
               { label: "CHALLENGES", value: "25 +" },
-              { label: "PRIZE POOL", value: "$ 8 Lakh" }
+              { label: "PRIZE POOL", value: "Prices worth 8 Lakh" }
             ].map((stat) => (
               <div key={stat.label} className="space-y-2">
                 <p className="font-mono text-2xl text-white tracking-normal">{stat.value}</p>
