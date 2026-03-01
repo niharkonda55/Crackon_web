@@ -553,41 +553,6 @@ export default function DarkCTFIntro({ onComplete }) {
             </div>
           </>
         )}
-
-        {/* Replay */}
-        <button
-          onClick={restart}
-          style={{
-            position: "absolute",
-            bottom: 20,
-            right: 20,
-            background: "none",
-            border: "1px solid rgba(200,184,154,0.3)",
-            color: "#c8b89a",
-            fontFamily: "Raleway,sans-serif",
-            fontWeight: 200,
-            fontSize: 9,
-            letterSpacing: "0.3em",
-            padding: "7px 18px",
-            cursor: "pointer",
-            textTransform: "uppercase",
-            transition: "all 0.3s",
-            zIndex: 10,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#c8b89a";
-            e.currentTarget.style.color = "#ffffff";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "rgba(200,184,154,0.3)";
-            e.currentTarget.style.color = "#c8b89a";
-          }}
-        >
-          <div className="flex items-center gap-x-2 tracking-[0.12em]">
-            <span>↺</span>
-            <span>REPLAY</span>
-          </div>
-        </button>
       </div>
     </>
   );
