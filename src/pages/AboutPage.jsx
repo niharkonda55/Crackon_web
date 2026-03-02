@@ -83,9 +83,9 @@ export function AboutPage() {
           <div className="h-px w-full bg-white/10" />
           {[
             ["REGISTRATION OPENS", "Feb 1"],
-            ["CTF BEGINS", "Mar 15 · 11:00 AM IST"],
-            ["CTF ENDS", "Mar 16 · 11:00 AM IST"],
-            ["WINNERS ANNOUNCED", "Mar 4"]
+            ["CTF BEGINS", "Mar 14 · 12:00 PM IST"],
+            ["CTF ENDS", "Mar 15 · 12:00 PM IST"],
+            ["WINNERS ANNOUNCED", "Mar 19"]
           ].map((node, idx) => (
             <div
               key={node[0]}
