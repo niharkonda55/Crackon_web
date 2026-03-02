@@ -99,11 +99,13 @@ export function HomePage() {
             transition={{ duration: 0.7, delay: 1 }}
           >
             <a
-              href="#domains"
+              href="https://hackculture.io/hackathons/dark-ctf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center border border-white/60 px-8 py-4 no-radius font-display text-[0.65rem] uppercase hover:border-white hover:text-white transition-colors group"
             >
               <div className="flex items-center gap-x-3 tracking-[0.12em]">
-                <span>ENTER</span><span>THE</span><span>LOOP</span>
+                <span>REGISTER</span><span>FOR</span><span>CTF</span>
               </div>
             </a>
           </motion.div>
