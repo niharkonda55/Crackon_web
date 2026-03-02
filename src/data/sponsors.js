@@ -30,6 +30,14 @@ export const sponsors = [
     logo: "/sponsors/winden.svg",
     tagline: "",
     url: "https://example.com"
+  },
+  {
+    id: "sp_005",
+    name: "K7 Security",
+    tier: "cybersecurity",
+    logo: "/assets/K7.jpeg",
+    tagline: "Advanced Cybersecurity Solutions",
+    url: "https://www.k7computing.com"
   }
 ];
 

@@ -3,6 +3,7 @@ import { sponsors } from "../data/sponsors.js";
 export function SponsorsPage() {
   const title = sponsors.filter((s) => s.tier === "title");
   const gold = sponsors.filter((s) => s.tier === "gold");
+  const cybersecurity = sponsors.filter((s) => s.tier === "cybersecurity");
   const supporter = sponsors.filter((s) => s.tier === "supporter");
 
   return (
@@ -53,6 +54,28 @@ export function SponsorsPage() {
             <div className="grid gap-6 sm:grid-cols-3">
               {gold.map((s) => (
                 <div key={s.id} className="text-center border border-border px-4 py-6 no-radius">
+                  <div className="text-sm text-white/80 mb-2">{s.name}</div>
+                  <p className="text-[0.7rem] text-muted font-mono">{s.tagline}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Cybersecurity sponsors */}
+        {cybersecurity.length > 0 && (
+          <section>
+            <h2 className="font-display text-[0.65rem] tracking-[0.08em] text-white uppercase mb-5">
+              <div className="flex items-center gap-x-3">
+                <span>CYBERSECURITY</span><span>SPONSORS</span>
+              </div>
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {cybersecurity.map((s) => (
+                <div key={s.id} className="text-center border border-border px-4 py-6 no-radius">
+                  <div className="h-16 mb-3 flex items-center justify-center overflow-hidden">
+                    <img src={s.logo} alt={s.name} className="h-full w-auto object-contain" />
+                  </div>
                   <div className="text-sm text-white/80 mb-2">{s.name}</div>
                   <p className="text-[0.7rem] text-muted font-mono">{s.tagline}</p>
                 </div>
