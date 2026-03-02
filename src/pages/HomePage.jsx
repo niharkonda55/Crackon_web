@@ -383,7 +383,7 @@ export function HomePage() {
             <div className="border-l border-accent pl-5 space-y-4">
               {[
                 ["FORMAT", "Team-based Capture The Flag (1–3 members per team)"],
-                ["DATE", "15th March 2026"],
+                ["DATE", "14th March 2026, 12 PM IST – 15th March 2026, 12 PM IST"],
                 ["LOCATION", "Online"]
               ].map(([label, value]) => (
                 <div key={label} className="text-xs text-text">

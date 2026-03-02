@@ -1,7 +1,7 @@
 export const config = {
   ctfName: "DARK CTF",
-  startTime: "2026-03-15T06:30:00Z",
-  endTime: "2026-03-16T05:30:00Z",
+  startTime: "2026-03-14T06:30:00Z",
+  endTime: "2026-03-15T06:30:00Z",
   maxTeamSize: 4,
   flagFormat: "CrackOn{...}",
   registrationCloses: "2025-02-28T23:59:00Z",
