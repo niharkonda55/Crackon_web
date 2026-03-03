@@ -322,7 +322,7 @@ export function HomePage() {
               {
                 id: "everhack",
                 name: "EVERHACK",
-                tier: "COMMUNITY SPONSOR",
+                tier: "COMMUNITY PARTNER",
                 image: everhackLogo
               }
             ].map((s) => (
