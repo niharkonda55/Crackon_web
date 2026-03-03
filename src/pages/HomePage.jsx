@@ -3,6 +3,7 @@ import hackcultureLogo from "../assets/hackculture.png";
 import apiSecLogo from "../assets/apisec-logo.png";
 import ctf7Logo from "../assets/ctf7.jpg";
 import k7Logo from "../assets/K7.jpeg";
+import everhackLogo from "../assets/evehack.jpeg";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
 import { challenges } from "../data/challenges.js";
@@ -292,7 +293,7 @@ export function HomePage() {
           <p className="text-[0.7rem] text-white/70 mb-6">
             Those who hold the thread.
           </p>
-          <div className="grid gap-6 sm:grid-cols-4 mt-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 mt-6">
             {[
               {
                 id: "apisec",
@@ -317,6 +318,12 @@ export function HomePage() {
                 name:"K7 Security",
                 tier:"CYBERSECURITY SPONSOR",
                 image: k7Logo
+              },
+              {
+                id: "everhack",
+                name: "EVERHACK",
+                tier: "COMMUNITY SPONSOR",
+                image: everhackLogo
               }
             ].map((s) => (
               <motion.article
@@ -434,6 +441,17 @@ export function HomePage() {
                 className="text-white hover:text-accent transition"
               >
                 {config.discordUrl}
+              </a>
+            </p>
+            <p>
+              WhatsApp:{" "}
+              <a
+                href="https://chat.whatsapp.com/IEL4bjBMNljIFh1Xxky7Wc"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white hover:text-accent transition"
+              >
+                Join Group
               </a>
             </p>
           </div>

@@ -54,6 +54,14 @@ export function Footer() {
             >
               Instagram
             </a>
+            <a
+              href="https://chat.whatsapp.com/IEL4bjBMNljIFh1Xxky7Wc"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition"
+            >
+              WhatsApp
+            </a>
           </div>
         </div>
 
