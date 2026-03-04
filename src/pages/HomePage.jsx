@@ -154,7 +154,7 @@ export function HomePage() {
           <div className="grid gap-8 sm:grid-cols-3 text-center">
             {[
               { label: "DOMAINS", value: 11 },
-              { label: "CHALLENGES", value: "25 +" },
+              { label: "CHALLENGES", value: "50 +" },
               { label: "PRIZE POOL", value: "Prices worth 8 Lakh" }
             ].map((stat) => (
               <div key={stat.label} className="space-y-2">
