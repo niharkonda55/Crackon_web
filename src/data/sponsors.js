@@ -38,6 +38,14 @@ export const sponsors = [
     logo: "/assets/K7.jpeg",
     tagline: "Advanced Cybersecurity Solutions",
     url: "https://www.k7computing.com"
+  },
+  {
+    id: "sp_006",
+    name: "Black Dragon",
+    tier: "community",
+    logo: "/sponsors/blackdragon.svg",
+    tagline: "Community Partner",
+    url: "https://example.com"
   }
 ];
 

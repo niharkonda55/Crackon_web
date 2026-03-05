@@ -4,6 +4,7 @@ import apiSecLogo from "../assets/apisec-logo.png";
 import ctf7Logo from "../assets/ctf7.jpg";
 import k7Logo from "../assets/K7.jpeg";
 import everhackLogo from "../assets/evehack.jpeg";
+import blackDragonLogo from "../assets/blackdragon.jpeg";
 import { useMemo } from "react";
 import { CountdownTimer } from "../components/CountdownTimer.jsx";
 import { challenges } from "../data/challenges.js";
@@ -324,6 +325,12 @@ export function HomePage() {
                 name: "EVERHACK",
                 tier: "COMMUNITY PARTNER",
                 image: everhackLogo
+              },
+              {
+                id: "blackdragon",
+                name: "BLACK DRAGON",
+                tier: "COMMUNITY PARTNER",
+                image: blackDragonLogo
               }
             ].map((s) => (
               <motion.article
