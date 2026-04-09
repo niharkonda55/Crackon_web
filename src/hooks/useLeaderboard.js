@@ -1,66 +1,39 @@
-import { useState, useEffect, useMemo } from 'react';
-import { io } from 'socket.io-client';
+import { useState, useMemo } from 'react';
+import { initialLeaderboardData } from '../data/leaderboardData';
 
-const SOCKET_URL = 'http://localhost:3001';
-const API_URL = 'http://localhost:3001/api/leaderboard';
+// Helper to calculate ranks with ties
+const calculateRanks = (data) => {
+  const sorted = [...data].sort((a, b) => b.score - a.score);
+  let currentRank = 1;
+  return sorted.map((item, index) => {
+    if (index > 0 && item.score < sorted[index - 1].score) {
+      currentRank = index + 1;
+    }
+    return { ...item, rank: currentRank };
+  });
+};
 
 export const useLeaderboard = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [lastUpdated, setLastUpdated] = useState(new Date());
-
-  useEffect(() => {
-    // Initial Fetch
-    const fetchData = async () => {
-      try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Failed to fetch leaderboard');
-        const result = await response.json();
-        setData(result);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-
-    // WebSocket Connection
-    const socket = io(SOCKET_URL);
-
-    socket.on('connect', () => {
-      console.log('Connected to leaderboard socket');
-    });
-
-    socket.on('leaderboardUpdate', (newData) => {
-      setData(newData);
-      setLastUpdated(new Date());
-    });
-
-    socket.on('connect_error', (err) => {
-      console.error('Socket connection error:', err);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
+  
+  // In a pure frontend version, data is taken from the local file
+  // Ranks are calculated dynamically to handle ties correctly
+  const dataWithRanks = useMemo(() => {
+    return calculateRanks(initialLeaderboardData);
   }, []);
 
   const filteredData = useMemo(() => {
-    return data.filter((item) =>
+    return dataWithRanks.filter((item) =>
       item.team.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  }, [data, searchQuery]);
+  }, [dataWithRanks, searchQuery]);
 
   return {
     data: filteredData,
-    loading,
-    error,
+    loading: false, // No longer loading from external source
+    error: null,
     searchQuery,
     setSearchQuery,
-    lastUpdated
+    lastUpdated: new Date() // Static for pure frontend (or actual file modified date)
   };
 };
