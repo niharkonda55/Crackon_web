@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const links = [
-  // { href: "#hero", label: "HOME" },
-  { href: "#about", label: "ABOUT" },
-  { href: "#domains", label: "DOMAINS" },
-  { href: "#sponsors", label: "SPONSORS" },
-  { href: "#contact", label: "CONTACT" }
+  // { href: "/#hero", label: "HOME" },
+  { href: "/#about", label: "ABOUT" },
+  { href: "/#domains", label: "DOMAINS" },
+  { href: "/#sponsors", label: "SPONSORS" },
+  { href: "/#contact", label: "CONTACT" },
+  { href: "/leaderboard", label: "LEADERBOARD" }
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState("#hero");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10);
@@ -41,12 +45,38 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    // When on home page, check if there's a hash and scroll to it
+    if (location.pathname === "/" && location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        // Delay slightly to ensure page is rendered
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const handleNavClick = (href) => (e) => {
+    // Prevent default for SPA navigation
     e.preventDefault();
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (href.startsWith("/#")) {
+      const hash = href.substring(1); // "#about"
+      if (location.pathname === "/") {
+        const id = hash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        navigate(href);
+      }
+    } else {
+      // Normal route links like /leaderboard
+      navigate(href);
     }
   };
 
